@@ -24,8 +24,34 @@ const assistant = Assistant({
 });
 
 export const metadata: Metadata = {
-  title: "Inbal Photography",
-  description: "Maternity and family photography",
+  title: {
+    default: "Inbal Photography | צילומי הריון ומשפחה",
+    template: "%s | Inbal Photography",
+  },
+  description: "Professional maternity and family photography in Israel. צילומי הריון ומשפחה מקצועיים בישראל.",
+  keywords: ["photography", "maternity", "family", "Israel", "צילום", "הריון", "משפחה", "ענבל"],
+  authors: [{ name: "Inbal Photography" }],
+  openGraph: {
+    type: "website",
+    locale: "he_IL",
+    alternateLocale: "en_US",
+    siteName: "Inbal Photography",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Inbal Photography",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
