@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "ענבל צילום",
+    "description": "צילומי הריון ומשפחה"
+  },
+  "nav": {
+    "home": "דף בית",
+    "galleries": "גלריות",
+    "about": "מי אני",
+    "pricing": "מחירון"
+  },
+  "hero": {
+    "title": "ענבל",
+    "subtitle": "צלמת"
+  },
+  "about": {
+    "title": "מי אני",
+    "readMore": "קראו עוד"
+  },
+  "galleries": {
+    "title": "גלריות",
+    "viewAll": "לכל הגלריות",
+    "back": "חזרה לגלריות"
+  },
+  "pricing": {
+    "title": "מחירון",
+    "cta": "לפרטים נוספים"
+  },
+  "footer": {
+    "copyright": "© {year} ענבל צילום. כל הזכויות שמורות."
+  },
+  "whatsapp": {
+    "message": "היי ענבל, אשמח לשמוע פרטים על צילומים"
+  },
+  "common": {
+    "contact": "צרו קשר"
+  }
+}

@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl">
+    <html>
       <body
         className={`${alexBrush.variable} ${cormorantGaramond.variable} ${assistant.variable} font-sans antialiased bg-background text-text-primary`}
       >

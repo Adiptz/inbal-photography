@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "title": "Inbal Photography",
+    "description": "Maternity and family photography"
+  },
+  "nav": {
+    "home": "Home",
+    "galleries": "Galleries",
+    "about": "About",
+    "pricing": "Pricing"
+  },
+  "hero": {
+    "title": "Inbal",
+    "subtitle": "Photographer"
+  },
+  "about": {
+    "title": "About Me",
+    "readMore": "Read more"
+  },
+  "galleries": {
+    "title": "Galleries",
+    "viewAll": "View all galleries",
+    "back": "Back to galleries"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "cta": "Get in touch"
+  },
+  "footer": {
+    "copyright": "© {year} Inbal Photography. All rights reserved."
+  },
+  "whatsapp": {
+    "message": "Hi Inbal, I'd love to hear about your photography services"
+  },
+  "common": {
+    "contact": "Contact"
+  }
+}
