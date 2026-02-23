@@ -1,0 +1,106 @@
+[
+  {
+    "id": "package-1",
+    "title": {
+      "he": "צילומי הריון בטבע/ים",
+      "en": "Beach / Nature Session"
+    },
+    "description": {
+      "he": [
+        "מתאים לצילומי הריון, זוגיות ונשיות",
+        "(סשן אישי או זוגי)",
+        "45 דקות סשן",
+        "60 תמונות מינימום ערוכות באיכות",
+        "מלאה נשלחות בגלריה אינטרנטית",
+        "אין קבלת חומר גלם",
+        "מיני סרטון 30 שניות נשלח בגלריה אינטרנטית"
+      ],
+      "en": [
+        "Suitable for maternity, couples and women",
+        "(Personal or couple session)",
+        "45 minute session",
+        "60 minimum edited photos in full quality",
+        "Delivered via online gallery",
+        "No raw files",
+        "30 second mini video included"
+      ]
+    },
+    "price": 2170,
+    "image": "/images/packages/package-1.jpg",
+    "order": 1
+  },
+  {
+    "id": "package-2",
+    "title": {
+      "he": "צילומי סטודיו",
+      "en": "Studio Session"
+    },
+    "description": {
+      "he": [
+        "מתאים לצילומי הריון, זוגיות ונשיות",
+        "(סשן אישי או זוגי)",
+        "שעה צילומים",
+        "צילומים על רקעים",
+        "ובנוסף סגנון לייף סטייל ביתי",
+        "מתאים ל 3-4 לוקים שונים של בינוד",
+        "תקבלו:",
+        "לינק עם כל התמונות שצולמו בסשן",
+        "25 תמונות לעריכה",
+        "כל התמונות נשלחות באיכות מלאה בגלריה אינטרנטית"
+      ],
+      "en": [
+        "Suitable for maternity, couples and women",
+        "(Personal or couple session)",
+        "1 hour session",
+        "Backdrop photography",
+        "Plus lifestyle home setting",
+        "Suitable for 3-4 different outfit looks",
+        "You'll receive:",
+        "Link with all photos from the session",
+        "25 photos for editing",
+        "All photos delivered in full quality via online gallery"
+      ]
+    },
+    "price": 1770,
+    "image": "/images/packages/package-2.jpg",
+    "order": 2
+  },
+  {
+    "id": "package-3",
+    "title": {
+      "he": "צילומי סטודיו פרימיום",
+      "en": "Studio Premium"
+    },
+    "description": {
+      "he": [
+        "מתאים לצילומי הריון, תדמית",
+        "זוגיות ונשיות",
+        "(סשן אישי או זוגי)",
+        "שעה וחצי צילומים",
+        "צילומים על רקע",
+        "ובסגנון לייף סטייל",
+        "מתאים ל 4-3 לוקים של ביגוד",
+        "תקבלו:",
+        "לינק עם כל התמונות שצולמו בסשן",
+        "35 תמונות ערוכות",
+        "סרטון מיני 30 שניות"
+      ],
+      "en": [
+        "Suitable for maternity, branding",
+        "Couples and women",
+        "(Personal or couple session)",
+        "1.5 hour session",
+        "Backdrop photography",
+        "Plus lifestyle setting",
+        "Suitable for 3-4 outfit looks",
+        "You'll receive:",
+        "Link with all photos from the session",
+        "35 edited photos",
+        "30 second mini video"
+      ]
+    },
+    "price": 1970,
+    "image": "/images/packages/package-3.jpg",
+    "order": 3
+  }
+]
