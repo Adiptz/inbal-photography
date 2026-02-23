@@ -1,29 +1,33 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import Header from '@/components/layout/Header';
+import MobileMenu from '@/components/layout/MobileMenu';
+import Footer from '@/components/layout/Footer';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import Hero from '@/components/sections/Hero';
+import GalleryPreview from '@/components/sections/GalleryPreview';
+import AboutPreview from '@/components/sections/AboutPreview';
 
 export default function Home() {
-  const t = useTranslations();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <main className="min-h-screen">
-      <div className="container-custom section-spacing">
-        <h1 className="font-script text-logo-desktop text-text-primary">
-          {t('hero.title')}
-        </h1>
-        <p className="font-sans text-body-small text-text-secondary tracking-logo uppercase">
-          {t('hero.subtitle').split('').join(' ')}
-        </p>
-        <h2 className="font-serif text-h2 text-text-primary mt-8">
-          {t('meta.description')}
-        </h2>
-        <p className="font-sans text-body text-text-secondary mt-4">
-          {t('nav.home')} | {t('nav.galleries')} | {t('nav.about')} | {t('nav.pricing')}
-        </p>
-        <button className="mt-8 bg-accent hover:bg-accent-hover text-white font-sans font-medium text-body-small px-7 py-3.5 rounded-pill shadow-button transition-colors duration-200">
-          {t('common.contact')}
-        </button>
-      </div>
-    </main>
+    <>
+      <Header onMenuOpen={() => setIsMobileMenuOpen(true)} />
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+      />
+
+      <main>
+        <Hero />
+        <GalleryPreview />
+        <AboutPreview />
+      </main>
+
+      <Footer />
+      <WhatsAppButton />
+    </>
   );
 }
