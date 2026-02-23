@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-alex-brush: "Alex Brush", cursive;
+    --font-cormorant: "Cormorant Garamond", serif;
+    --font-assistant: "Assistant", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-assistant);
+  }
+}
+
+@layer components {
+  /* Container with responsive padding */
+  .container-custom {
+    @apply max-w-content mx-auto px-5 md:px-8 lg:px-12;
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    @apply py-section-mobile lg:py-section-desktop;
+  }
+
+  /* Section title styling */
+  .section-title {
+    @apply font-serif text-h2-mobile lg:text-h2 font-medium text-text-primary text-center mb-content-mobile lg:mb-content-desktop;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Letter spacing for logo subtitle */
+  .tracking-logo {
+    letter-spacing: 0.25em;
+  }
+}
