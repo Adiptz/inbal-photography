@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Logo from '@/components/ui/Logo';
+import { getImagePath } from '@/lib/utils';
 
 // Set to true to use video background, false for image
 const USE_VIDEO = false;
@@ -30,11 +31,11 @@ export default function Hero() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover grayscale"
           >
-            <source src="/images/hero/hero-video.mp4" type="video/mp4" />
+            <source src={getImagePath("/images/hero/hero-video.mp4")} type="video/mp4" />
           </video>
         ) : (
           <Image
-            src="/images/hero/hero-main.jpg"
+            src={getImagePath("/images/hero/hero-main.jpg")}
             alt="Hero background"
             fill
             priority

@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import content from '@/content/he.json';
+import { getImagePath } from '@/lib/utils';
 
 export default function AboutSection() {
   const t = useTranslations('about');
@@ -116,7 +117,7 @@ export default function AboutSection() {
         {/* Image - Left side (RTL), full height */}
         <div className="w-[55%] lg:w-[58%] relative">
           <Image
-            src="/images/about/about-portrait-2.jpg"
+            src={getImagePath("/images/about/about-portrait-2.jpg")}
             alt="ענבל - צלמת הריון ומשפחה"
             fill
             className="object-cover object-left-top"
@@ -134,7 +135,7 @@ export default function AboutSection() {
         {/* Hero Image */}
         <div className="relative w-full aspect-[3/4] overflow-hidden">
           <Image
-            src="/images/about/about-portrait-2.jpg"
+            src={getImagePath("/images/about/about-portrait-2.jpg")}
             alt="ענבל - צלמת הריון ומשפחה"
             fill
             className="object-cover object-left-top"

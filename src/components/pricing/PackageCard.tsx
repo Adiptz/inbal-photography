@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import type { Package } from '@/lib/types';
 import content from '@/content/he.json';
+import { getImagePath } from '@/lib/utils';
 
 interface PackageCardProps {
   pkg: Package;
@@ -27,7 +28,7 @@ export default function PackageCard({ pkg }: PackageCardProps) {
       {/* Image - shorter on mobile to keep price visible */}
       <div className="relative aspect-[3/1] sm:aspect-[3/2] md:aspect-[4/3] lg:aspect-square overflow-hidden rounded-t-3xl">
         <Image
-          src={pkg.image}
+          src={getImagePath(pkg.image)}
           alt={pkg.title.he}
           fill
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"

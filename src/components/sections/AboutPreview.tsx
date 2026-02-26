@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import content from '@/content/he.json';
+import { getImagePath } from '@/lib/utils';
 
 export default function AboutPreview() {
   const t = useTranslations('about');
@@ -18,7 +19,7 @@ export default function AboutPreview() {
           <div className="w-full md:w-1/2">
             <div className="relative aspect-[3/4] overflow-hidden">
               <Image
-                src="/images/about/inbal-portrait.jpg"
+                src={getImagePath("/images/about/inbal-portrait.jpg")}
                 alt="Inbal"
                 fill
                 className="object-cover"

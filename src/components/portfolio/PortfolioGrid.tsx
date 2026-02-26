@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Lightbox from '@/components/gallery/Lightbox';
 import type { PortfolioImage } from '@/lib/types';
+import { getImagePath } from '@/lib/utils';
 
 interface PortfolioGridProps {
   images: PortfolioImage[];
@@ -38,7 +39,7 @@ export default function PortfolioGrid({ images }: PortfolioGridProps) {
             `}
           >
             <img
-              src={image.src}
+              src={getImagePath(image.src)}
               alt={image.alt}
               loading={index < 8 ? 'eager' : 'lazy'}
               decoding="async"
@@ -50,7 +51,7 @@ export default function PortfolioGrid({ images }: PortfolioGridProps) {
 
       {lightboxIndex !== null && (
         <Lightbox
-          images={images.map(img => img.src)}
+          images={images.map(img => getImagePath(img.src))}
           currentIndex={lightboxIndex}
           onClose={() => setLightboxIndex(null)}
           onPrev={() => setLightboxIndex(prev => prev !== null && prev > 0 ? prev - 1 : prev)}
