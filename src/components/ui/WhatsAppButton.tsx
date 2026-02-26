@@ -1,14 +1,10 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
-import contentHe from '@/content/he.json';
-import contentEn from '@/content/en.json';
+import { useTranslations } from 'next-intl';
+import content from '@/content/he.json';
 
 export default function WhatsAppButton() {
   const t = useTranslations('whatsapp');
-  const locale = useLocale();
-  const content = locale === 'he' ? contentHe : contentEn;
-  const isRTL = locale === 'he';
 
   const whatsappNumber = content.contact.whatsappNumber;
   const message = encodeURIComponent(t('message'));
@@ -19,7 +15,7 @@ export default function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed bottom-6 ${isRTL ? 'left-6' : 'right-6'} z-40
+      className={`fixed bottom-6 left-6 z-40
         bg-accent hover:bg-accent-hover text-white
         w-14 h-14 rounded-full shadow-lg
         flex items-center justify-center

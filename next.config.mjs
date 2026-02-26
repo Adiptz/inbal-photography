@@ -6,6 +6,8 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/inbal-photography' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/inbal-photography/' : '',
   images: {
     unoptimized: true,
   },

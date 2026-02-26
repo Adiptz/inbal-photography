@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import Header from '@/components/layout/Header';
-import MobileMenu from '@/components/layout/MobileMenu';
 import Footer from '@/components/layout/Footer';
+import MobileMenu from '@/components/layout/MobileMenu';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import AboutSection from '@/components/sections/AboutSection';
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
         onClose={() => setIsMobileMenuOpen(false)}
       />
 
-      <main className="pt-20">
+      <main>
         <AboutSection />
       </main>
 

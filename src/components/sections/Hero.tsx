@@ -4,28 +4,44 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Logo from '@/components/ui/Logo';
 
+// Set to true to use video background, false for image
+const USE_VIDEO = false;
+
 export default function Hero() {
   const t = useTranslations('common');
 
-  const scrollToContent = () => {
-    const nextSection = document.getElementById('galleries-preview');
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      const top = aboutSection.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video or Image */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero/hero-main.jpg"
-          alt="Hero background"
-          fill
-          priority
-          className="object-cover grayscale"
-          sizes="100vw"
-        />
+        {USE_VIDEO ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover grayscale"
+          >
+            <source src="/images/hero/hero-video.mp4" type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src="/images/hero/hero-main.jpg"
+            alt="Hero background"
+            fill
+            priority
+            className="object-cover grayscale"
+            sizes="100vw"
+          />
+        )}
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/30" />
       </div>
@@ -37,7 +53,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <button
-        onClick={scrollToContent}
+        onClick={scrollToAbout}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/80 hover:text-white transition-colors animate-bounce"
         aria-label={t('contact')}
       >

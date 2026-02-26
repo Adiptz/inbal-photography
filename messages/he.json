@@ -5,7 +5,7 @@
   },
   "nav": {
     "home": "דף בית",
-    "galleries": "גלריות",
+    "portfolio": "תיק עבודות",
     "about": "מי אני",
     "pricing": "מחירון"
   },
@@ -17,10 +17,9 @@
     "title": "מי אני",
     "readMore": "קראו עוד"
   },
-  "galleries": {
-    "title": "גלריות",
-    "viewAll": "לכל הגלריות",
-    "back": "חזרה לגלריות"
+  "portfolio": {
+    "title": "תיק עבודות",
+    "viewAll": "לתיק העבודות"
   },
   "pricing": {
     "title": "מחירון",

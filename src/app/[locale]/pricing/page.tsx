@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Header from '@/components/layout/Header';
-import MobileMenu from '@/components/layout/MobileMenu';
 import Footer from '@/components/layout/Footer';
+import MobileMenu from '@/components/layout/MobileMenu';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import PackageCard from '@/components/pricing/PackageCard';
 import packages from '@/data/packages.json';
@@ -24,8 +24,8 @@ export default function PricingPage() {
         onClose={() => setIsMobileMenuOpen(false)}
       />
 
-      <main className="pt-20">
-        <section className="section-spacing">
+      <main className="pt-16">
+        <section className="py-4 lg:py-6">
           <div className="container-custom">
             <h1 className="section-title">{t('title')}</h1>
 

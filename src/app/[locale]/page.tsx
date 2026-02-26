@@ -2,12 +2,11 @@
 
 import { useState } from 'react';
 import Header from '@/components/layout/Header';
-import MobileMenu from '@/components/layout/MobileMenu';
 import Footer from '@/components/layout/Footer';
+import MobileMenu from '@/components/layout/MobileMenu';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import Hero from '@/components/sections/Hero';
-import GalleryPreview from '@/components/sections/GalleryPreview';
-import AboutPreview from '@/components/sections/AboutPreview';
+import AboutSection from '@/components/sections/AboutSection';
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,9 +20,12 @@ export default function Home() {
       />
 
       <main>
-        <Hero />
-        <GalleryPreview />
-        <AboutPreview />
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="about">
+          <AboutSection />
+        </section>
       </main>
 
       <Footer />

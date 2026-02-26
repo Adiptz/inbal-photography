@@ -47,4 +47,10 @@ export interface SiteContent {
   };
 }
 
+export interface PortfolioImage {
+  id: number;
+  src: string;
+  alt: string;
+}
+
 export type Locale = 'he' | 'en';

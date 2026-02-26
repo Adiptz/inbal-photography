@@ -44,8 +44,8 @@ const config: Config = {
       },
       spacing: {
         // Design system spacing scale
-        "section-desktop": "96px",
-        "section-mobile": "64px",
+        "section-desktop": "48px",
+        "section-mobile": "32px",
         "content-desktop": "48px",
         "content-mobile": "32px",
       },
@@ -58,6 +58,29 @@ const config: Config = {
       boxShadow: {
         button: "0 2px 8px rgba(0,0,0,0.1)",
         "whatsapp": "0 4px 12px rgba(0,0,0,0.15)",
+      },
+      animation: {
+        "bounce-x": "bounce-x 1s ease-in-out infinite",
+        "subtle-pulse": "subtle-pulse 2s ease-in-out infinite",
+        "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-up-delay-1": "fade-up 0.6s ease-out 0.1s forwards",
+        "fade-up-delay-2": "fade-up 0.6s ease-out 0.2s forwards",
+        "fade-up-delay-3": "fade-up 0.6s ease-out 0.3s forwards",
+        "fade-up-delay-4": "fade-up 0.6s ease-out 0.4s forwards",
+      },
+      keyframes: {
+        "bounce-x": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(-6px)" },
+        },
+        "subtle-pulse": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.02)" },
+        },
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
     },
   },

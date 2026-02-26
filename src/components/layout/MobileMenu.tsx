@@ -1,21 +1,37 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { Link, usePathname } from '@/i18n/routing';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
 import Logo from '@/components/ui/Logo';
-import LanguageToggle from './LanguageToggle';
+import { useScrollSpy, scrollToSection } from '@/hooks/useScrollSpy';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+type NavItem = {
+  id: string;
+  label: string;
+  type: 'scroll' | 'route';
+  href?: string;
+  sectionId?: string;
+};
+
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
+  const router = useRouter();
   const isRTL = locale === 'he';
+  const isHomePage = pathname === '/';
+
+  // Scroll spy for home page sections
+  const activeSection = useScrollSpy({
+    sectionIds: ['hero', 'about'],
+    offset: 80,
+  });
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -40,18 +56,53 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [onClose]);
 
-  const navLinks = [
-    { href: '/', label: t('home') },
-    { href: '/galleries', label: t('galleries') },
-    { href: '/about', label: t('about') },
-    { href: '/pricing', label: t('pricing') },
+  // Navigation items in display order: דף הבית, מי אני, תיק עבודות, מחירון
+  const navItems: NavItem[] = [
+    { id: 'home', label: t('home'), type: 'scroll', sectionId: 'hero' },
+    { id: 'about', label: t('about'), type: 'route', href: '/about' },
+    { id: 'portfolio', label: t('portfolio'), type: 'route', href: '/portfolio' },
+    { id: 'pricing', label: t('pricing'), type: 'route', href: '/pricing' },
   ];
 
-  const isActiveLink = (href: string) => {
-    if (href === '/') {
-      return pathname === '/';
+  const handleNavClick = useCallback(
+    (item: NavItem) => {
+      onClose();
+
+      if (item.type === 'scroll' && item.sectionId) {
+        if (isHomePage) {
+          // Already on home, just scroll after menu closes
+          setTimeout(() => {
+            scrollToSection(item.sectionId!, 0);
+          }, 300);
+        } else {
+          // Navigate to home with scroll target
+          router.push(`/?scrollTo=${item.sectionId}`);
+        }
+      }
+      // For 'route' type, navigation handled by Link
+    },
+    [isHomePage, router, onClose]
+  );
+
+  const isActiveItem = (item: NavItem): boolean => {
+    if (item.type === 'scroll') {
+      if (!isHomePage) return false;
+
+      if (item.sectionId === 'hero') {
+        return activeSection === 'hero' || activeSection === null;
+      }
+      return activeSection === item.sectionId;
     }
-    return pathname.startsWith(href);
+
+    // Special case: highlight "מי אני" when about section is visible on home page
+    if (item.id === 'about' && isHomePage && activeSection === 'about') {
+      return true;
+    }
+
+    if (item.href === '/') {
+      return pathname === '/' && !activeSection;
+    }
+    return pathname.startsWith(item.href || '');
   };
 
   return (
@@ -104,33 +155,36 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* Navigation Links */}
           <nav className="flex-1 py-6">
             <ul className="space-y-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={onClose}
-                    className={`block px-6 py-3 font-sans text-lg transition-colors ${
-                      isActiveLink(link.href)
-                        ? 'text-accent bg-surface'
-                        : 'text-text-primary hover:text-accent hover:bg-surface'
-                    } ${isRTL ? 'text-right' : 'text-left'}`}
-                  >
-                    {link.label}
-                  </Link>
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  {item.type === 'route' ? (
+                    <Link
+                      href={item.href || '/'}
+                      onClick={onClose}
+                      className={`block px-6 py-3 font-sans text-lg transition-colors ${
+                        isActiveItem(item)
+                          ? 'text-accent bg-surface'
+                          : 'text-text-primary hover:text-accent hover:bg-surface'
+                      } ${isRTL ? 'text-right' : 'text-left'}`}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => handleNavClick(item)}
+                      className={`block w-full px-6 py-3 font-sans text-lg transition-colors ${
+                        isActiveItem(item)
+                          ? 'text-accent bg-surface'
+                          : 'text-text-primary hover:text-accent hover:bg-surface'
+                      } ${isRTL ? 'text-right' : 'text-left'}`}
+                    >
+                      {item.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
           </nav>
-
-          {/* Footer with language toggle */}
-          <div className={`p-5 border-t border-border ${isRTL ? 'text-right' : 'text-left'}`}>
-            <div className="flex items-center gap-2">
-              <span className="text-text-secondary text-sm">
-                {isRTL ? 'שפה:' : 'Language:'}
-              </span>
-              <LanguageToggle />
-            </div>
-          </div>
         </div>
       </div>
     </>
