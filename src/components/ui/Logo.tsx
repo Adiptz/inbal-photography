@@ -15,7 +15,6 @@ export default function Logo({
   linkToHome = true
 }: LogoProps) {
   const locale = useLocale();
-  const isHebrew = locale === 'he';
 
   // Logo text - always English
   const mainText = 'INBAL PERETZ';
