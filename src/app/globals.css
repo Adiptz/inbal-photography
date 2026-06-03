@@ -15,6 +15,7 @@
 
   body {
     font-family: var(--font-assistant);
+    background-color: #1a1a1a;
   }
 }
 
@@ -38,6 +39,11 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Hide scrollbar for carousel */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
   /* Letter spacing for logo subtitle */
@@ -66,7 +72,7 @@
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
   50% {
-    box-shadow: 0 10px 15px -3px rgba(201, 160, 160, 0.3), 0 4px 6px -2px rgba(201, 160, 160, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(45, 45, 45, 0.3), 0 4px 6px -2px rgba(45, 45, 45, 0.2);
   }
 }
 

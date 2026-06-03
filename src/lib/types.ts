@@ -18,14 +18,23 @@ export interface Package {
   id: string;
   title: {
     he: string;
-    en: string;
+    en?: string;
+  };
+  subtitle?: {
+    he: string;
+    en?: string;
   };
   description: {
     he: string[];
-    en: string[];
+    en?: string[];
+  };
+  extra?: {
+    he: string;
+    en?: string;
   };
   price: number;
   image: string;
+  imagePosition?: string;
   order: number;
 }
 

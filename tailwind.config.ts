@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Design System Colors
+        // Design System Colors - Black/White/Grey
         background: "#FFFFFF",
-        surface: "#FAFAFA",
-        "text-primary": "#2D2D2D",
-        "text-secondary": "#6B6B6B",
-        "text-light": "#9A9A9A",
-        accent: "#C9A0A0",
-        "accent-hover": "#B08888",
-        border: "#E8E8E8",
+        surface: "#F5F5F5",
+        "text-primary": "#1A1A1A",
+        "text-secondary": "#4A4A4A",
+        "text-light": "#8A8A8A",
+        accent: "#2D2D2D",
+        "accent-hover": "#1A1A1A",
+        border: "#E0E0E0",
       },
       fontFamily: {
         script: ["var(--font-alex-brush)", "cursive"],

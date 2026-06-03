@@ -39,7 +39,7 @@ export default function Hero() {
             alt="Hero background"
             fill
             priority
-            className="object-cover grayscale"
+            className="object-cover grayscale object-[35%_center] md:object-[center_20%] scale-[1.02]"
             sizes="100vw"
           />
         )}

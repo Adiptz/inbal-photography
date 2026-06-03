@@ -17,9 +17,9 @@ export default function Logo({
   const locale = useLocale();
   const isHebrew = locale === 'he';
 
-  // Logo text based on locale
-  const mainText = isHebrew ? 'ענבל' : 'Inbal';
-  const subtitleText = isHebrew ? 'צלמת' : 'Photographer';
+  // Logo text - always English
+  const mainText = 'INBAL PERETZ';
+  const subtitleText = 'photography';
 
   // Color based on variant
   const textColor = variant === 'light' ? 'text-white' : 'text-text-primary';
@@ -27,8 +27,8 @@ export default function Logo({
 
   // Size classes
   const mainSize = size === 'large'
-    ? 'text-[48px] md:text-[64px]'
-    : 'text-[36px] md:text-[48px]';
+    ? 'text-[36px] md:text-[48px]'
+    : 'text-[28px] md:text-[36px]';
   const subtitleSize = size === 'large'
     ? 'text-[14px] md:text-[16px]'
     : 'text-[12px] md:text-[14px]';
@@ -37,7 +37,7 @@ export default function Logo({
     <div className="flex flex-col items-center">
       {/* Main logo text */}
       <span
-        className={`font-script ${mainSize} ${textColor} leading-tight`}
+        className={`font-sans font-light ${mainSize} ${textColor} leading-tight tracking-[0.15em]`}
         style={{
           textShadow: variant === 'light' ? '0 2px 4px rgba(0,0,0,0.3)' : 'none'
         }}
@@ -47,7 +47,7 @@ export default function Logo({
 
       {/* Subtitle with letter-spacing */}
       <span
-        className={`font-sans font-light ${subtitleSize} ${subtitleColor} tracking-[0.25em] uppercase`}
+        className={`font-sans font-light ${subtitleSize} ${subtitleColor} tracking-[0.3em]`}
         style={{
           textShadow: variant === 'light' ? '0 1px 2px rgba(0,0,0,0.3)' : 'none'
         }}

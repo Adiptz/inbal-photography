@@ -30,7 +30,7 @@ export default function AboutPreview() {
 
           {/* Text Content */}
           <div className="w-full md:w-1/2 text-right">
-            <h2 className="text-h2-mobile lg:text-h2 font-medium text-text-primary mb-6">
+            <h2 className="text-h2-mobile lg:text-h2 font-sans font-medium text-text-primary mb-6">
               {t('title')}
             </h2>
             <div className="space-y-4">

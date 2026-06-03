@@ -128,11 +128,13 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       >
         <div className="flex flex-col h-full">
           {/* Header with close button */}
-          <div className={`flex items-center justify-between p-5 border-b border-border ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <Logo variant="dark" size="default" linkToHome={false} />
+          <div className="relative pt-14 pb-5 px-5 border-b border-border">
+            <div className="flex justify-center">
+              <Logo variant="dark" size="default" linkToHome={false} />
+            </div>
             <button
               onClick={onClose}
-              className="p-2 text-text-primary hover:text-accent transition-colors"
+              className="absolute top-4 right-4 p-2 text-text-primary hover:text-accent transition-colors"
               aria-label="Close menu"
             >
               <svg

@@ -29,10 +29,16 @@ export default function PricingPage() {
           <div className="container-custom">
             <h1 className="section-title">{t('title')}</h1>
 
-            {/* Packages Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {sortedPackages.map((pkg) => (
-                <PackageCard key={pkg.id} pkg={pkg} />
+            {/* Packages Grid - 2x2 on mobile, 4 cols on desktop */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-10">
+              {sortedPackages.map((pkg, index) => (
+                <div
+                  key={pkg.id}
+                  className="opacity-0 animate-fade-up h-full"
+                  style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
+                >
+                  <PackageCard pkg={pkg} />
+                </div>
               ))}
             </div>
           </div>
