@@ -5,9 +5,9 @@
   },
   "nav": {
     "home": "דף בית",
-    "portfolio": "תיק עבודות",
+    "portfolio": "גלריה",
     "about": "מי אני",
-    "pricing": "מחירון"
+    "pricing": "חבילות"
   },
   "hero": {
     "title": "ענבל",
@@ -18,11 +18,11 @@
     "readMore": "קראו עוד"
   },
   "portfolio": {
-    "title": "תיק עבודות",
-    "viewAll": "לתיק העבודות"
+    "title": "גלריה",
+    "viewAll": "לגלריה"
   },
   "pricing": {
-    "title": "מחירון",
+    "title": "חבילות",
     "cta": "לפרטים נוספים"
   },
   "footer": {

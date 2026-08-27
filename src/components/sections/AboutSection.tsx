@@ -20,14 +20,6 @@ export default function AboutSection() {
         {/* Text Content - Right side (RTL) */}
         <div className="w-[45%] lg:w-[42%] flex items-center justify-center bg-white relative z-10">
           <div className="w-full max-w-[480px] px-8 lg:px-12 py-10 lg:py-12">
-            {/* Decorative Elements */}
-            <div className="opacity-0 animate-fade-up">
-              <div className="flex items-center gap-4 mb-5">
-                <div className="w-12 h-[2px] bg-accent" />
-                <span className="text-[13px] text-text-light tracking-wide">הסיפור שלי</span>
-              </div>
-            </div>
-
             {/* H1 Title */}
             <h1 className="opacity-0 animate-fade-up-delay-1 text-[36px] lg:text-[44px] font-sans font-medium text-text-primary leading-[1.2] mb-6">
               {t('title')}
@@ -49,37 +41,25 @@ export default function AboutSection() {
                 ידעתי לעבוד מדויק, לחשוב לעומק, לראות פרטים.
               </p>
 
-              {/* Pull Quote */}
-              <blockquote className="relative py-3 pr-5 border-r-2 border-accent my-5">
-                <p className="text-[18px] lg:text-[20px] font-medium text-text-primary leading-[1.5]">
-                  ואז החיים עשו טוויסט.
-                </p>
-              </blockquote>
-
               <p className="text-[15px] lg:text-base text-text-secondary leading-[1.75] max-w-[420px]">
-                נכנסתי להריון, ילדתי את אגם – והבנתי שהזמן טס.
+                ואז החיים עשו טוויסט. נכנסתי להריון, ילדתי את אגם – והבנתי שהזמן טס.
                 בהריון שלי לא עשיתי צילומים. הייתי עסוקה, עייפה, בתוך המרוץ.
                 ורק אחרי הלידה הבנתי כמה הייתי שמחה לעצור רגע ולשמור את התקופה הזו.
               </p>
 
               <p className="text-[15px] lg:text-base text-text-secondary leading-[1.75] max-w-[420px]">
-                <span className="text-text-primary font-medium">אז בחרתי אחרת.</span>
-                {' '}היום אני מצלמת הריונות, אמהות ותינוקות בגישה רגישה, מקצועית וקלילה.
+                אז בחרתי אחרת. היום אני מצלמת הריונות, אמהות ותינוקות בגישה רגישה, מקצועית וקלילה.
                 אור מחמיא, לוקיישנים מדויקים, והרבה חיבור אמיתי.
+              </p>
+
+              <p className="text-[15px] lg:text-base text-text-secondary leading-[1.75] max-w-[420px]">
+                כי צילום טוב הוא לא רק תמונה יפה.
+                הוא זיכרון שיישאר איתך הרבה אחרי שהרגע יעבור.
               </p>
             </div>
 
-            {/* Closing Statement */}
+            {/* CTAs */}
             <div className="opacity-0 animate-fade-up-delay-4">
-              <div className="mb-6">
-                <p className="text-[15px] lg:text-base text-text-primary leading-[1.7]">
-                  כי צילום טוב הוא לא רק תמונה יפה.
-                  <br />
-                  <span className="text-accent font-medium">
-                    הוא זיכרון שיישאר איתך הרבה אחרי שהרגע יעבור.
-                  </span>
-                </p>
-              </div>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
@@ -103,7 +83,7 @@ export default function AboutSection() {
                              px-6 py-3 rounded-full text-[15px] font-medium
                              transition-all duration-300"
                 >
-                  לתיק העבודות
+                  לגלריה
                   <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -171,32 +151,18 @@ export default function AboutSection() {
               ידעתי לעבוד מדויק, לחשוב לעומק, לראות פרטים.
             </p>
 
-            {/* Pull Quote */}
-            <blockquote className="py-2 pr-4 border-r-2 border-accent">
-              <p className="text-[16px] font-medium text-text-primary leading-[1.5]">
-                ואז החיים עשו טוויסט.
-              </p>
-            </blockquote>
-
             <p className="text-[14px] text-text-secondary leading-[1.7]">
-              נכנסתי להריון, ילדתי את אגם – והבנתי שהזמן טס.
+              ואז החיים עשו טוויסט. נכנסתי להריון, ילדתי את אגם – והבנתי שהזמן טס.
               בהריון שלי לא עשיתי צילומים. ורק אחרי הלידה הבנתי כמה הייתי שמחה לשמור את התקופה הזו.
             </p>
 
             <p className="text-[14px] text-text-secondary leading-[1.7]">
-              <span className="text-text-primary font-medium">אז בחרתי אחרת.</span>
-              {' '}היום אני מצלמת הריונות, אמהות ותינוקות בגישה רגישה, מקצועית וקלילה.
+              אז בחרתי אחרת. היום אני מצלמת הריונות, אמהות ותינוקות בגישה רגישה, מקצועית וקלילה.
             </p>
-          </div>
 
-          {/* Closing */}
-          <div className="mb-6">
-            <p className="text-[14px] text-text-primary leading-[1.7]">
+            <p className="text-[14px] text-text-secondary leading-[1.7]">
               כי צילום טוב הוא לא רק תמונה יפה.
-              <br />
-              <span className="text-accent font-medium">
-                הוא זיכרון שיישאר איתך הרבה אחרי שהרגע יעבור.
-              </span>
+              הוא זיכרון שיישאר איתך הרבה אחרי שהרגע יעבור.
             </p>
           </div>
 
@@ -222,7 +188,7 @@ export default function AboutSection() {
                          px-5 py-3 rounded-full text-[14px] font-medium
                          transition-all duration-300"
             >
-              לתיק העבודות
+              לגלריה
             </Link>
           </div>
         </div>
