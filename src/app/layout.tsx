@@ -25,7 +25,7 @@ const assistant = Assistant({
 
 export const metadata: Metadata = {
   title: {
-    default: "Inbal Photography | צילומי הריון ומשפחה",
+    default: "Inbal Photography",
     template: "%s | Inbal Photography",
   },
   description: "Professional maternity and family photography in Israel. צילומי הריון ומשפחה מקצועיים בישראל.",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
