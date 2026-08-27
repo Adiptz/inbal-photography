@@ -14,12 +14,12 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params: { locale } }: Props) {
-  if (!routing.locales.includes(locale as Locale)) {
+  if (locale !== 'he') {
     notFound();
   }
 
   const messages = await getMessages();
-  const direction = locale === 'he' ? 'rtl' : 'ltr';
+  const direction = 'rtl';
 
   return (
     <div dir={direction} lang={locale}>

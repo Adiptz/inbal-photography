@@ -62,4 +62,4 @@ export interface PortfolioImage {
   alt: string;
 }
 
-export type Locale = 'he' | 'en';
+export type Locale = 'he';
